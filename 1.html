@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 2: Pagination</title>
+  <style>
+    body { 
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+      background: #f9f9f9;
+      color: #000;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .gallery-wrapper {
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      position: relative;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .page img {
+      width: 45%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .page img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Show only selected page */
+    #page1:checked ~ .gallery .page1,
+    #page2:checked ~ .gallery .page2,
+    #page3:checked ~ .gallery .page3 {
+      display: flex;
+    }
+
+    /* Pagination Buttons */
+    .pagination {
+      margin-top: 20px;
+    }
+
+    .pagination label {
+      margin: 0 5px;
+      padding: 8px 15px;
+      background-color: #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .pagination label:hover {
+      background-color: #bbb;
+    }
+
+    /* Active page indicator */
+    #page1:checked ~ .pagination label[for="page1"],
+    #page2:checked ~ .pagination label[for="page2"],
+    #page3:checked ~ .pagination label[for="page3"] {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Task 2: Pagination</h1>
+
+<div class="gallery-wrapper">
+  <!-- Pagination Radios -->
+  <input type="radio" name="pages" id="page1" checked>
+  <input type="radio" name="pages" id="page2">
+  <input type="radio" name="pages" id="page3">
+
+  <!-- Image Pages -->
+  <div class="gallery">
+    <!-- Page 1 -->
+    <div class="page page1">
+      <img src="https://picsum.photos/seed/1/200/200" alt="">
+      <img src="https://picsum.photos/seed/2/200/200" alt="">
+      <img src="https://picsum.photos/seed/3/200/200" alt="">
+      <img src="https://picsum.photos/seed/4/200/200" alt="">
+    </div>
+    <!-- Page 2 -->
+    <div class="page page2">
+      <img src="https://picsum.photos/seed/5/200/200" alt="">
+      <img src="https://picsum.photos/seed/6/200/200" alt="">
+      <img src="https://picsum.photos/seed/7/200/200" alt="">
+      <img src="https://picsum.photos/seed/8/200/200" alt="">
+    </div>
+    <!-- Page 3 -->
+    <div class="page page3">
+      <img src="https://picsum.photos/seed/9/200/200" alt="">
+      <img src="https://picsum.photos/seed/10/200/200" alt="">
+      <img src="https://picsum.photos/seed/11/200/200" alt="">
+      <img src="https://picsum.photos/seed/12/200/200" alt="">
+    </div>
+  </div>
+
+  <!-- Pagination Controls -->
+  <div class="pagination">
+    <label for="page1">1</label>
+    <label for="page2">2</label>
+    <label for="page3">3</label>
+  </div>
+</div>
+
+</body>
+</html>
